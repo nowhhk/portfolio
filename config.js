@@ -1,14 +1,14 @@
 module.exports = {
-    url: "http://demo.nagui.me",
-    title: "Nagui Starter",
+    url: "https://nowhhk.github.io/",
+    title: "nowhhk",
     lang: "ko",
-    description: "Gatsby Starter Nagui",
-    defaultKeywords: [`blog`, `gatsby`, `javascript`, `react`, `kimnagui`],
+    description: "Blog by HK",
+    defaultKeywords: [`blog`, `frontend`, `javascript`, `react`, `developer`],
     defaultMetaImage: "/defaultmetaimage.png",
 
-    authorNickName: "KimNagui",
-    authorFullName: "KimGwangHyeon",
-    authorDescription: "I Love CaffeLatte",
+    authorNickName: "HyunKyung",
+    authorFullName: "HongHyunKyung",
+    authorDescription: "hi",
     photo: "content/assets/profile-pic.png",
 
     // icon : FontAwesome

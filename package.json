@@ -64,6 +64,6 @@
     "scripts": {
         "dev": "gatsby develop",
         "build": "gatsby build",
-        "deploy": "gatsby-plugin-s3 deploy"
+        "deploy": "yarn run clean && gatsby build && gh-pages -d public -b master"
     }
 }
