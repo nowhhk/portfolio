@@ -1,16 +1,87 @@
 ---
 title: I Love CaffeLatte
-date: "2019-05-02"
+date: "2020-03-01"
 category: "Coffee"
 tags:
-    - caffelatte
-    - coffee
-cover: ./caffelatte.png
+    - cmd
+    - 리눅스
+cover:
 ---
 
-Oh, here's a history of caffe latte from this Wikipedia on
-[caffelatte](https://en.wikipedia.org/wiki/Latte).
+### 리눅스란?
+리누스 토르발스가 커뮤니티 주체로 개발한 유닉스 기반 컴퓨터 운영 체제이다.
 
-> Coffee and milk have been part of European cuisine since the 17th century. Caffè e latte, Milchkaffee, café au lait and café con leche are domestic terms of traditional ways of drinking coffee, usually as part of breakfast in the home. Public cafés in Europe and the US it seems have no mention of the terms until the 20th century, although Kapuziner is mentioned in Austrian coffee houses in Vienna and Trieste in the 2nd half of 1700s as "coffee with cream, spices and sugar" (being the origin of the Italian cappuccino).
+### 리눅스의 구조 - Linux File System Hierarchy (FHS)
+![](https://images.velog.io/images/nowhhk/post/dee5b841-4dbd-4377-b2b4-fad1c5c1ec65/image.png)
+- 커널 : 리눅스의 핵심, 프로세스 관리, 메모리관리, 파일 및 장치등을 제어하는 기능을 수행한다.
+- 셸 : 커널과 사용자의 접점 (bash ..) 사용자로부터 명령을 받아 그것을 해석하고 프로그램을 실행하는 역할 (터미널)
+- 응용프로그램 : 각종 프로그래밍 개발 도구, 문서 편집도구, 네트워크 관련 도구등
+### Home Directory
+/home/ 사용자의 정보를 저장하는 경로이다.
+명령어 cd를 통해 바로 홈디렉토리로 이동할 수 있다. 
+(Home 디렉토리 이외의 다른 디렉토리 들은 주로 system directory 라고 하는데, 즉 리눅스의 운영과 관리에 관련한 파일들이 존재하는 디렉토리이다.)
 
-![caffelatte](./caffelatte.png)
+
+### 절대 경로와 상대경로의 차이점
+절대경로 : root 디렉토리 부터 시작하는 완전한 경로
+상대경로 : 현재 내 위치를 기반으로 움직이는 경로
+
+```
+. (싱글닷):현재경로
+.. (더블닷):상위경로 중첩해서사용가능 ex) cd ../../.. 
+```
+
+### Configs
+리눅스에는 설정을 주로 파일을 통해서 한다. 여러 config file, 즉 여러 설정 파일들 중 가장 중요한 설정 파일이 바로 shell 설정 파일이다. 
+각 shell 마다 고유 설정 파일이 있다. Bash는 .bashrc 라는 설정파일을 사용하고 zsh는 .zshrc 라는 설정 파일을 사용한다. 이런 dot으로 시작하는  "dot file" 이나 디렉토리는 숨겨져있으므로 la **-a **옵션을 이용해서 볼수있다.
+
+### 환경변수
+ 환경 변수란 shell의 어떠한 설정 값을 가지고 있는 변수이다.
+ 어떤 프로그램이 돌아가게 해주는 실행파일의 경로를 잡아주는걸 환경변수 세팅이라고 하는데, 리눅스에는 매우 다양한 환경변수들이 있다.
+현재 지정된 환경변수를 출력하는 명령어는 _env _와_  printenv_ 이다.
+
+명령어를 사용할때 만일 경로가 지정되지 않으면 shell이 PATH 환경 변수에 저장되어 있는 경로들을 하나 하나 보면서 실행 하고자 하는 프로그램이 위치해 있는지 찾는다. 그리고 찾으면 실행 시킨다.
+
+### PATH
+PATH 환경 변수는 명령어들을 찾을 수 있는 경로들을 저장해놓은 환경 변수 이다.
+```
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+```
+하나의 긴 경로가 아닌 여러 경로를 담고 있는 것이다. 각 경로들을 : 를 사용해서 구분한다.
+
+ mkdir, ls 같은 명령어들도 결국 일종의 실행파일인데 명령어 입력 시 shell이 PATH 환경 변수에 저장되어 있는 경로들을 하나 하나 보면서 실행 하고자 하는 프로그램이 위치해 있는지 찾는다. 그리고 찾으면 실행 시킨다.
+
+###  Piping
+command1 | command2
+command1의 결과값을 command2의 input으로 넘겨준다.
+
+ 예를 들어, history | grep ls
+ 는 history가 출력하는 값들 중 원하는 값만 필터링을 할 수 가 있다.
+
+### Basic Shell Commands (명령어)
+
+
+**ls**
+현재 디렉토리의 파일 목록을 출력하는 명령어. 'ls -l'은 자세히 보기 
+-a 붙이면 모두 보기.(dot file확인시)
+
+**pwd**
+현재 위치하고 있는 디렉토리를 알려주는 명령어
+
+**mkdir**
+mkdir 새로 생성할 디렉토리명
+
+**cd /** (절대경로)
+cd 이동할 디렉토리의 경로명 (tab 키 누르면 디렉토리 이름 전부안써도 자동완성) 
+
+**cd ..** (상대경로)
+현재 디렉토리의 부모 디렉토리로 이동( ..은 부모디렉토리 의미)
+
+**rm**
+파일, 디렉토리 삭제
+_rm 파일명
+rm -r 디렉토리명_
+
+**--help**
+명령어 뒤에 --help를 붙이면 명령의 사용설명서가 출력된다.
+_-man (상세한 설명)_
