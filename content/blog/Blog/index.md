@@ -1,11 +1,11 @@
 ---
-title: I Love CaffeLatte
-date: "2020-03-01"
-category: "Coffee"
+title: 리눅스에 대해 알아보자
+date: "2020-03-02"
+category: "Blog"
 tags:
     - cmd
     - 리눅스
-cover:
+cover: 
 ---
 
 ### 리눅스란?

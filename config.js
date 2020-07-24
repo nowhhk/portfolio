@@ -11,10 +11,10 @@ module.exports = {
     authorDescription: "hi",
     photo: "content/assets/profile-pic.png",
 
-    // icon : FontAwesome
+    // icon : FontAwesomey
     category: [
         {
-            id: "Coffee",
+            id: "Blog",
             icon: "fa-coffee"
         },
         {
@@ -24,8 +24,8 @@ module.exports = {
     ],
 
     social: {
-        email: "calrosban@gmail.com",
-        github: "https://github.com/kimnagui"
+        email: "nowhhk@gmail.com",
+        github: "https://github.com/nowhhk"
     },
 
     postsPerPage: 5,
